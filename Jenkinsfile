@@ -1,6 +1,5 @@
 @Library('jenkins-pipeline-shared-lib-sample')_
 
-agent any
 stage('Print Build Info') {
 	printBuildinfo {
 		name = "Sample Name"
