@@ -1,15 +1,43 @@
 @Library('jenkins-pipeline-shared-lib-sample')_
 
-stage('Print Build Info') {
-	printBuildinfo {
-		name = "Sample Name"
-	}
-} stage('Disable balancer') {
-disableBalancerUtils()
-} stage('Deploy') {
-deploy()
-} stage('Enable balancer') {
-enableBalancerUtils()
-} stage('Check Status') {
-checkStatus()
+pipeline {
+    agent none
+    stages {
+        stage ('Print Build Info') {
+            steps {
+                script {
+                    printBuildinfo {
+                        name = "Sample Name"
+                    }
+                }
+            }
+         stage ('Disable balancer') {
+            steps {
+                script {
+                    disableBalancerUtils()
+                }
+            }
+         }
+         stage ('Deploy') {
+            steps {
+                script {
+                    deploy()
+                }
+            }
+         }
+         stage ('Enable balancer') {
+            steps {
+                script {
+                    enableBalancerUtils()
+                }
+            }
+         }
+         stage ('Check Status') {
+            steps {
+                script {
+                    checkStatus()
+                }
+            }
+         }
+    }
 }
