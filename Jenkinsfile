@@ -11,6 +11,7 @@ pipeline {
                     }
                 }
             }
+         }
          stage ('Disable balancer') {
             steps {
                 script {
@@ -40,5 +41,4 @@ pipeline {
             }
          }
     }
-}
 }
