@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     printBuildinfo {
-                        name = "Sample Name"
+                        name = "Tom Sandholm Pipeline Demo"
                     }
                 }
             }
