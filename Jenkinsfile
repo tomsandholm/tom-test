@@ -2,6 +2,7 @@
 
 pipeline {
 agent any
+stages {
 stage('Print Build Info') {
 	printBuildinfo {
 		name = "Sample Name"
@@ -14,5 +15,6 @@ deploy()
 enableBalancerUtils()
 } stage('Check Status') {
 checkStatus()
+}
 }
 }
