@@ -1,4 +1,4 @@
-@Library('tom-lib)_
+@Library('tom-lib')_
 
 pipeline {
 	agent any
