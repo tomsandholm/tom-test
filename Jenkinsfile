@@ -1,6 +1,12 @@
-@Library('tom-lib')
+libraries {
+	lib('tom-lib')
+}
 
-stage('Demo') {
-  echo "this is from tom"
-  helloWord "this is another from tom" 
+pipeline {
+	agent any
+	stages {
+		stage('demo') {
+			helloWorld 'this is from tom'
+		}
+	}
 }
