@@ -5,7 +5,9 @@ pipeline {
 	stages {
 		stage('demo') {
 			steps {
-				helloWorld 'this is from tom'
+				helloWorld 'hi everyone'
+				helloTom 'this is for tom'
+				helloKat 'this is for kat'
 			}
 		}
 	}
