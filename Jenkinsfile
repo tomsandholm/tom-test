@@ -6,7 +6,9 @@ pipeline {
 	agent any
 	stages {
 		stage('demo') {
-			helloWorld 'this is from tom'
+			steps {
+				helloWorld 'this is from tom'
+			}
 		}
 	}
 }
