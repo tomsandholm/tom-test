@@ -1,7 +1,7 @@
 @Library('tom-lib')_
 
 pipeline {
-	agent { node { label 'jenkins01.tsand.org' } }
+	agent { node { label 'jenkins02.tsand.org' } }
 	stages {
 		stage('demo') {
 			steps {
