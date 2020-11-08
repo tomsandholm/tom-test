@@ -9,9 +9,6 @@ pipeline {
 				helloTom 'this is for tom'
 				helloKat 'this is for kat'
 			}
-			steps {
-				echo "NODE_NAME= ${env.NODE_NAME}"
-			}
 		}
 	}
 }
