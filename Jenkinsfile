@@ -1,7 +1,7 @@
 @Library('tom-lib')_
 
 pipeline {
-	agent ubuntu
+	agent any
 	stages {
 		stage('demo') {
 			steps {
