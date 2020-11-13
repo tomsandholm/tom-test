@@ -1,7 +1,7 @@
 @Library('tom-lib')_
 
 def findOptions() {
-  return UUID.randomUUID().toString().split('-').join('\n')
+  return sh (script: 'git tag', returnStdout: true ).trim()
 }
 
 def getArray() {
@@ -14,7 +14,7 @@ pipeline {
             sel=findOptions()
         }
         parameters {
-            choice(name: 'Choice', choices: findOptions() , description: 'Pick somethine')
+            choice(name: 'Choice', choices: findOptions() , description: 'Pick a Tag')
         }
 	stages {
 		stage('demo') {
