@@ -1,11 +1,13 @@
 @Library('tom-lib')_
 
+def getArray() {
+  return ['one','two','three']
+}
+
 pipeline {
 	agent any
         environment {
-            sel[0] = 'one'
-            sel[1] = 'two'
-            sel[2] = 'three'
+            sel=getArray()
         }
         parameters {
             choice(name: 'Choice', choices: ${sel} , description: 'Pick somethine')
