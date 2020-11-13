@@ -2,8 +2,11 @@
 
 pipeline {
 	agent any
+        environment {
+          TAGS = getTags()
+        }
         parameters {
-            choice(name: 'Choice', choices: getTags() , description: 'Pick a Tag')
+            choice(name: 'Choice', choices: TAGS , description: 'Pick a Tag')
         }
 	stages {
 		stage('demo') {
