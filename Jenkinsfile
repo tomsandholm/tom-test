@@ -10,7 +10,7 @@ pipeline {
             sel=getArray()
         }
         parameters {
-            choice(name: 'Choice', choices: [getArray()] , description: 'Pick somethine')
+            choice(name: 'Choice', choices: getArray() , description: 'Pick somethine')
         }
 	stages {
 		stage('demo') {
