@@ -1,5 +1,9 @@
 @Library('tom-lib')_
 
+def findOptions() {
+  return UUID.randomUUID().toString().split('-').join('\n')
+}
+
 def getArray() {
   return ['1','2','3','4','5']
 }
@@ -7,7 +11,7 @@ def getArray() {
 pipeline {
 	agent any
         environment {
-            sel=getArray()
+            sel=findOptions()
         }
         parameters {
             choice(name: 'Choice', choices: getArray() , description: 'Pick somethine')
