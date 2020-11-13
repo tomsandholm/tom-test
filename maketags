@@ -1,0 +1,12 @@
+#! /bin/bash
+
+(( max=30 ))
+
+(( c=0 ))
+
+while (( c < max ))
+do
+	#echo "tag -a tag-$(printf '%02d' $c) -m \"update to tag $c\""
+	git tag -a tag-$(printf '%02d' $c) -m "update to tag $c"
+	(( c++ ))
+done
