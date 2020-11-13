@@ -3,7 +3,7 @@
 pipeline {
 	agent any
         parameters {
-            choice(name: 'Choice', choices: getTags() , description: 'Pick a Tag')
+            choice(name: 'Choice', choices: ['one','two','three'] , description: 'Pick a Tag')
         }
 	stages {
 		stage('demo') {
