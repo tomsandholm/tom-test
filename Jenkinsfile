@@ -4,9 +4,9 @@ pipeline {
 	agent any
         environment {
             def sel = new String[3]
-            def sel[0] = 'one'
-            def sel[1] = 'two'
-            def sel[2] = 'three'
+            sel[0] = 'one'
+            sel[1] = 'two'
+            sel[2] = 'three'
         }
         parameters {
             choice(name: 'Choice', choices: ${sel} , description: 'Pick somethine')
