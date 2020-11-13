@@ -1,7 +1,7 @@
 @Library('tom-lib')_
 
 def getArray() {
-  return ['one','two','three']
+  return ['1','2','3']
 }
 
 pipeline {
