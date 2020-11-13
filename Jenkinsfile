@@ -14,7 +14,7 @@ pipeline {
             sel=findOptions()
         }
         parameters {
-            choice(name: 'Choice', choices: getArray() , description: 'Pick somethine')
+            choice(name: 'Choice', choices: findOptions() , description: 'Pick somethine')
         }
 	stages {
 		stage('demo') {
