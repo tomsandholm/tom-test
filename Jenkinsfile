@@ -3,7 +3,6 @@
 pipeline {
 	agent any
         environment {
-            def sel = [:]
             sel[0] = 'one'
             sel[1] = 'two'
             sel[2] = 'three'
