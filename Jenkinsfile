@@ -1,8 +1,5 @@
 @Library('tom-lib')_
 
-def findOptions() {
-  return sh (script: 'git tag .', returnStdout: true ).trim()
-}
 
 def getArray() {
   return ['1','2','3','4','5']
@@ -14,7 +11,7 @@ pipeline {
             sel=findOptions()
         }
         parameters {
-            choice(name: 'Choice', choices: findOptions() , description: 'Pick a Tag')
+            choice(name: 'Choice', choices: getTags() , description: 'Pick a Tag')
         }
 	stages {
 		stage('demo') {
