@@ -2,8 +2,14 @@
 
 pipeline {
 	agent any
+        environment {
+            def sel = new String[3]
+            def sel[0] = 'one'
+            def sel[1] = 'two'
+            def sel[2] = 'three'
+        }
         parameters {
-            choice(name: 'Choice', choices: ['one','two','three'], description: 'Pick somethine')
+            choice(name: 'Choice', choices: ${sel} , description: 'Pick somethine')
         }
 	stages {
 		stage('demo') {
