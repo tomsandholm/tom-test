@@ -2,9 +2,6 @@
 
 pipeline {
 	agent any
-        environment {
-            sel=findOptions()
-        }
         parameters {
             choice(name: 'Choice', choices: getTags() , description: 'Pick a Tag')
         }
