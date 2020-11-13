@@ -1,7 +1,7 @@
 @Library('tom-lib')_
 
 def findOptions() {
-  return sh (script: 'git tag', returnStdout: true ).trim()
+  return sh (script: 'git tag .', returnStdout: true ).trim()
 }
 
 def getArray() {
