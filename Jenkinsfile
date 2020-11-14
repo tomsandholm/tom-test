@@ -11,7 +11,7 @@ pipeline {
 			}
                 }
                 stage('deploy') {
-                       when { tag "release-*" }
+                       when { tag "official-release" }
                        steps {
                                 echo 'deploy mode activated'
                        }
