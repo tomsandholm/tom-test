@@ -9,6 +9,7 @@ pipeline {
 				helloTom 'this is for tom'
 				helloKat 'this is for kat'
 			}
+                }
                 stage('deploy') {
                        when { tag "release -*" }
                        steps {
