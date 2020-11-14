@@ -6,7 +6,7 @@ pipeline {
           def TAGS = getTags()
         }
         parameters {
-            choice(name: 'Choice', choices: $TAGS , description: 'Pick a Tag')
+            choice(name: 'Choice', choices: TAGS , description: 'Pick a Tag')
         }
 	stages {
 		stage('demo') {
