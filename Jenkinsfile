@@ -1,16 +1,16 @@
 @Library('tom-lib')_
 
+def findTags() {
+	def list = '/usr/bin/git tags'.execute()
+	return list.tokenize()
+}
+	
+	
+
 pipeline {
 	agent any
 	parameters {
-		activeChoiceParam('choice1') {
-			description('select your choice')
-			choiceType('RADIO')
-			groovyScript {
-				script("return['aaa','bbb']")
-				fallbackScript('return["error"]')
-			}
-		}
+		choice(name: 'Tag:', choices: list)
 	}
 	stages {
 		stage('demo') {
