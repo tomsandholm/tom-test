@@ -2,7 +2,7 @@
 
 def findTags() {
 	def sout = new StringBuffer(), serr = new StringBuffer()
-	def list = '/usr/bin/git tags'.execute()
+	def list = '/usr/bin/git tag'.execute()
 	list.consumeProcessOutput(sout,serr)
 	list.waitForOrKill(10000)
 	return list.tokenize()
