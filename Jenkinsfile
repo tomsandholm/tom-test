@@ -17,7 +17,7 @@ properties([
 	            def list = '/usr/bin/git tag'.execute()
 	            list.consumeProcessOutput(sout,serr)
 	            list.waitForOrKill(10000)
-	            return list.tokenize()
+	            return list.tokenize()'''
             ]
         ]
     ])
