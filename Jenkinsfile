@@ -4,13 +4,13 @@ def findTags() {
 	def list = '/usr/bin/git tags'.execute()
 	return list.tokenize()
 }
-	
-	
+
+def List = findTags().join('\n')
 
 pipeline {
 	agent any
 	parameters {
-		choice(name: 'Tag:', choices: list)
+		choice(name: 'Tag:', choices: List)
 	}
 	stages {
 		stage('demo') {
