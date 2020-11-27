@@ -10,11 +10,5 @@ pipeline {
 				helloKat 'this is for kat'
 			}
                 }
-                stage('deploy') {
-                       when { tag "official-release-*" }
-                       steps {
-                                echo 'deploy mode activated'
-                       }
-		}
 	}
 }
