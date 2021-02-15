@@ -3,9 +3,9 @@ pipeline {
 	stages {
 		stage('demo') {
 			steps {
-				helloWorld 'hi everyone'
-				helloTom 'this is for tom'
-				helloKat 'this is for kat'
+				echo 'hi everyone'
+				echo 'this is for tom'
+				echo 'this is for kat'
 			}
                 }
 	}
