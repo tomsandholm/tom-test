@@ -1,5 +1,3 @@
-@Library('tom-lib')_
-
 pipeline {
 	agent any
 	stages {
