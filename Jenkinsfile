@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo "${params.choice}"
+        echo "${params.Type}"
       }
     }
   }
