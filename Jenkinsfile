@@ -1,37 +1,17 @@
-properties([
-    parameters([
-        [
-          $class: 'ChoiceParameter',
-          choiceType: 'PT_SINGLE_SELECT',
-          name: 'Environment',
-          script: [
-            $class: 'ScriptlerScript',
-            scriptlerScriptId:'Environments.groovy'
-          ]
-        ],
-        [
-          $class: 'CascadeChoiceParameter',
-          choiceType: 'PT_SINGLE_SELECT',
-          name: 'Host',
-          referencedParameters: 'Environment',
-          script: [
-            $class: 'ScriptlerScript',
-            scriptlerScriptId:'HostsInEnv.groovy',
-            parameters: [
-              [name:'Environment', value: '$Environment']
-            ]
-          ]
-        ]
-      ])
-  ])
-
+/* vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidht=4: */
 pipeline {
   agent any
+  environment {
+    FW_PARAM1 = 'firmware-param-1'
+    FW_PARAM2 = 'firmware-param-2'
+  }
+  parameters {
+    choice(choices: 'dev\nstage\ntest\nprod', description: 'Build Type:', name: "Type")
+  }
   stages {
     stage('Build') {
       steps {
-        echo "${params.Environment}"
-        echo "${params.Host}"
+        echo "${params.choice}"
       }
     }
   }
