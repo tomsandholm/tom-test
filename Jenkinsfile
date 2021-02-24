@@ -6,7 +6,7 @@ pipeline {
     FW_PARAM2 = 'firmware-param-2'
   }
   parameters {
-    choice(choices: 'dev\nstage\ntest\nprod', description: 'Build Type:', name: "Type")
+    choice(choices: 'test\ndev\nstage\nprod', description: 'Build Type:', name: "Type")
   }
   stages {
     stage('Build') {
