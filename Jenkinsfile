@@ -8,7 +8,7 @@ pipeline {
   parameters {
     choice(choices: '1G\n2G\n4G', description: 'Root Disk Size', name: 'rootdisk')
 	choice(choices: '18.04\n20.04', description: 'Distro', name: 'distro')
-	choide(choices: 'general\njenkins\njenkinsslave', description: 'Role', name: 'role')
+	choice(choices: 'general\njenkins\njenkinsslave', description: 'Role', name: 'role')
     choice(choices: 'test\ndev\nstage\nprod', description: 'Build Type:', name: "Type")
   }
   stages {
