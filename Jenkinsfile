@@ -1,4 +1,4 @@
-/* vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidht=4: */
+/* vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4: */
 pipeline {
   agent any
   environment {
