@@ -10,7 +10,7 @@ pipeline {
 	choice(choices: '18.04\n20.04', description: 'Distro', name: 'distro')
 	choice(choices: 'general\njenkins\njenkinsslave', description: 'Role', name: 'role')
     choice(choices: 'test\ndev\nstage\nprod', description: 'Build Type:', name: "Type")
-	booleanParam(name: 'Publish', defaultValue: false, Description: 'Push to Artifactory?')
+	booleanParam(name: 'Publish', defaultValue: false, description: 'Push to Artifactory?')
   }
   stages {
     stage('Build') {
