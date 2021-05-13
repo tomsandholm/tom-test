@@ -5,7 +5,7 @@ pipeline {
 	parameters {
 		string (
 			description: 'Tag Override Value',
-			name: 'tagovr',
+			name: 'Tag-Override-Value',
 			defaultValue: ''
 		)
 	}
@@ -15,9 +15,10 @@ pipeline {
 		stage('demo') {
 			steps {
 				script {
-					if ( params.tagovr != '' ) {
+					if ( params.Tag-Override-Value != '' ) {
+					    TAGSTRING = ${params.Tag-Override-Value}
 						sh 'echo it is not auto'
-						sh 'echo the value is ${tagovr}'
+						sh 'echo the value is ${Tag-Override-Value}'
 					} else {
 						sh 'echo it is auto'
 					}
