@@ -16,9 +16,9 @@ pipeline {
 			steps {
 				script {
 					if ( params.tagovr != 'auto' ) {
-					    TAGSTRING = params.tagovr
+					    TAGSTRING = ${params.tagovr}
 						sh 'echo it is not auto'
-						sh 'echo the value is $TAGSTRING'
+						sh 'echo the value is ${TAGSTRING}'
 					} else {
 						sh 'echo it is auto'
 					}
