@@ -13,11 +13,13 @@ pipeline {
 	stages {
 		stage('demo') {
 			steps {
+				script (
 				if ( params.tagovr != null ) {
 					echo 'it is not null'
 				} else {
 					echo 'it is null'
 				}
+				)
 			}
                 }
 	}
