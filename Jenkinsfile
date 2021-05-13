@@ -17,7 +17,7 @@ pipeline {
 				script {
 					if ( params.tagovr != '' ) {
 						sh 'echo it is not auto'
-						sh 'echo the value is ${params.tagovr}'
+						sh 'echo the value is ${tagovr}'
 					} else {
 						sh 'echo it is auto'
 					}
