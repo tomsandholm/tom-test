@@ -18,7 +18,9 @@ pipeline {
 					if ( params.tagovr != 'auto' ) {
 						sh 'echo it is not auto'
 					} else {
+					    TAGSTRING = params.tagovr
 						sh 'echo it is auto'
+						sh 'echo the value is TAGSTRING'
 					}
 				}
 			}
