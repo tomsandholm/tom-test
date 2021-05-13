@@ -1,10 +1,14 @@
-/* vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4: */
+@Library('tom-lib')_
 
-node("") {
-  timeout(unit: 'SECONDS', time: 5) {
-    stage("One"){
-	  sleep 10
-	  echo 'hello'
+pipeline {
+	agent any
+	stages {
+		stage('demo') {
+			steps {
+				helloWorld 'hi everyone'
+				helloTom 'this is for tom'
+				helloKat 'this is for kat'
+			}
+                }
 	}
-  }
 }
