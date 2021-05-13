@@ -5,7 +5,8 @@ pipeline {
 	parameters {
 		string (
 			description: 'Tag Override Value',
-			name: 'tagovr'
+			name: 'tagovr',
+			defaultValue: 'auto'
 		)
 	}
 
@@ -14,10 +15,10 @@ pipeline {
 		stage('demo') {
 			steps {
 				script {
-					if ( params.tagovr != null ) {
-						sh 'echo it is not null'
+					if ( params.tagovr != 'auto' ) {
+						sh 'echo it is not auto'
 					} else {
-						sh 'echo it is null'
+						sh 'echo it is auto'
 					}
 				}
 			}
