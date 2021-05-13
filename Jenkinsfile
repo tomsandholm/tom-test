@@ -16,7 +16,7 @@ pipeline {
 			steps {
 				script {
 					if ( params.Tag-Override-Value != '' ) {
-					    TAGSTRING = ${params.Tag-Override-Value}
+					    TAGSTRING = ${Tag-Override-Value}
 						sh 'echo it is not auto'
 						sh 'echo the value is ${Tag-Override-Value}'
 					} else {
