@@ -1,3 +1,4 @@
+# vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4:
 
 pipeline {
 	agent any
@@ -13,14 +14,14 @@ pipeline {
 	stages {
 		stage('demo') {
 			steps {
-				script (
-				if ( params.tagovr != null ) {
-					echo 'it is not null'
-				} else {
-					echo 'it is null'
+				script {
+					if ( params.tagovr != null ) {
+						sh 'echo it is not null'
+					} else {
+						sh 'echo it is null'
+					}
 				}
-				)
 			}
-                }
+		}
 	}
 }
