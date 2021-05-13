@@ -5,8 +5,7 @@ pipeline {
 	parameters {
 		string (
 			description: 'Tag Override Value',
-			name: 'tagovr',
-			defaultValue: ''
+			name: 'tagovr'
 		)
 	}
 
